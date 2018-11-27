@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="hamburger.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:hamburger"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <RelativePanel>
+            <StackPanel Orientation="Horizontal" Name="headblock">
+                <Button Name="backbutton">
+                    <SymbolIcon Height="25" Width="25" Symbol="Back"></SymbolIcon>
+                </Button>
+                <TextBlock Margin="10,0,0,0" Name="titleblock" Text="Sample app"></TextBlock>
+            </StackPanel>
+            <Button RelativePanel.Below="headblock" Name="hamburgerbutton" Click="Hamburgerbutton_Click">
+                <SymbolIcon Height="25" Width="25" Symbol="GlobalNavigationButton"></SymbolIcon>
+            </Button>
+        </RelativePanel>
+        <SplitView Name="splitview1" CompactPaneLength="45" IsPaneOpen="False" Grid.Row="1" DisplayMode="CompactInline">
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ListBox>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Height="25" Width="25" Symbol="CalendarDay"></SymbolIcon>
+                                <TextBlock Margin="10,0,0,0">item1</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Height="25" Width="25" Symbol="Calculator"></SymbolIcon>
+                                <TextBlock Margin="10,0,0,0">item2</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Height="25" Width="25" Symbol="OneBar"></SymbolIcon>
+                                <TextBlock Margin="10,0,0,0">item3</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Height="25" Width="25" Symbol="PostUpdate"></SymbolIcon>
+                                <TextBlock Margin="10,0,0,0">item4</TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                    <StackPanel Grid.Row="2">
+                        <ListBox>
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Setting" Height="25" Width="25"></SymbolIcon>
+                                    <TextBlock Margin="10,0,0,0">Settings</TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                    </StackPanel>
+                </Grid>
+
+            </SplitView.Pane>
+        </SplitView>
+
+    </Grid>
+</Page>
